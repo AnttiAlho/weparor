@@ -1,0 +1,20 @@
+<h2>Rating Stats</h2>
+
+<p>
+  Number of ratings <%= @ratings.count %>
+</p>
+
+<h3>Recent ratings<h3>
+<ul>
+  <% @ratings.order(created_at: :desc).limit(5).each do |rating| %>
+    <li> <%= rating %> <%= link_to rating.user.username, rating.user %></li>
+  <% end %>
+</ul>
+
+<h3>Top Beers<h3>
+
+<h3>Top Breweries<h3>
+
+<h3>Top raters<h3>
+
+<h3>Top Styles<h3>
